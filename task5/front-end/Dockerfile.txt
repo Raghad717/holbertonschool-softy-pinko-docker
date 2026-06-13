@@ -1,0 +1,12 @@
+FROM nginx:latest
+
+# Copy the front-end files to the web directory
+COPY ./softy-pinko-front-end /var/www/html/softy-pinko-front-end
+
+# Copy the Nginx configuration
+COPY ./softy-pinko-front-end.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 9000
+EXPOSE 9000
+
+# Nginx will start automatically (the base image handles this)
